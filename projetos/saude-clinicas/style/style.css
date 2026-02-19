@@ -1,0 +1,398 @@
+@charset "UTF-8";
+
+:root {
+    /* PALETA CLINICAL CLEAN */
+    --cor-fundo: #FFFFFF;
+    --cor-fundo-secundario: #F8FAFC;
+    /* Cinza muito sutil, quase gelo */
+    --cor-texto: #0F172A;
+    /* Escuro profundo para leitura confortável */
+    --cor-texto-mutado: #64748B;
+    --cor-destaque: #0284C7;
+    /* Azul Médico (Confiança/Saúde) */
+    --cor-destaque-hover: #0369A1;
+    --fonte-padrao: 'Plus Jakarta Sans', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--fonte-padrao);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* FIM DA BASE OBRIGATÓRIA */
+
+/* --- TIPOGRAFIA & UTILITÁRIOS --- */
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 15px;
+}
+
+/* --- BOTÕES (Mobile Vaccine 2.0 Aplicada) --- */
+.btn-cta,
+.btn-outline {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    border-radius: 8px;
+    /* Bordas menos arredondadas dão ar mais sério/clínico */
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-cta {
+    background: var(--cor-destaque);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+}
+
+.btn-cta:hover {
+    background: var(--cor-destaque-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-destaque);
+}
+
+.btn-outline:hover {
+    background: var(--cor-destaque);
+    color: #fff;
+}
+
+/* Regra Mobile: Botões importantes 100% de largura */
+@media (max-width: 1024px) {
+
+    .btn-cta,
+    .btn-outline {
+        width: 100%;
+        display: flex;
+    }
+}
+
+.btn-full {
+    width: 100% !important;
+    display: flex !important;
+}
+
+/* --- HEADER --- */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--cor-texto);
+}
+
+.logo span {
+    color: var(--cor-destaque);
+}
+
+.nav-desktop {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-desktop a {
+    font-weight: 600;
+    color: var(--cor-texto-mutado);
+}
+
+.nav-desktop a:hover {
+    color: var(--cor-destaque);
+}
+
+@media (max-width: 768px) {
+
+    .nav-desktop,
+    .header .btn-cta {
+        display: none;
+    }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 100dvh;
+    /* Mobile Vaccine 2.0 */
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    position: relative;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 100%);
+}
+
+.hero-content {
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #E0F2FE;
+    color: var(--cor-destaque);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--cor-texto-mutado);
+    margin-bottom: 40px;
+    max-width: 550px;
+}
+
+/* --- CALCULADORA --- */
+.calculator-section {
+    padding: 100px 5%;
+    background: var(--cor-fundo);
+}
+
+.calc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    /* Caixa na direita, texto na esquerda */
+    gap: 80px;
+    align-items: center;
+}
+
+#author{
+    color: aqua;
+}
+
+@media (max-width: 1024px) {
+    .calc-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+.calc-text {
+    flex: 1;
+}
+
+.calc-text p {
+    color: var(--cor-texto-mutado);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.calc-benefits {
+    list-style: none;
+}
+
+.calc-benefits li {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.calc-box {
+    flex: 1;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--cor-fundo-secundario);
+    border: 1px solid #E2E8F0;
+    color: var(--cor-texto);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+
+.resultado-hidden {
+    display: none;
+    text-align: center;
+}
+
+.metric-container {
+    margin: 20px 0;
+}
+
+.idade-destaque {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--cor-destaque);
+}
+
+.protocol-box {
+    background: #F0F9FF;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-destaque);
+    text-align: left;
+    margin-top: 20px;
+}
+
+.protocol-box h4 {
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+}
+
+.protocol-box p {
+    color: var(--cor-texto-mutado);
+    font-size: 0.95rem;
+}
+
+/* --- BENTO GRID (Mobile Vaccine 2.0) --- */
+.features-section {
+    padding: 100px 5%;
+    background: var(--cor-fundo-secundario);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: var(--cor-texto-mutado);
+}
+
+.bento-grid {
+    display: grid;
+    /* GRID SEGURO: minmax 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bento-card {
+    background: #FFFFFF;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    transition: 0.4s;
+}
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.bento-card h3 {
+    margin-bottom: 15px;
+    color: var(--cor-destaque);
+}
+
+.bento-card p {
+    color: var(--cor-texto-mutado);
+    font-size: 0.95rem;
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 40px 5%;
+    background: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+    color: var(--cor-texto-mutado);
+    font-size: 0.9rem;
+}
+
+/* --- ANIMAÇÕES HIGH-END (Scroll Reveal) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}

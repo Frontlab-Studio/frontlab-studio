@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRONTLAB STUDIO | Tecnologia de Alta Performance</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="shortcut icon" href="img/icon-site.png" type="image/x-png">
+</head>
+
+<body>
+
+    <canvas id="tech-bg"></canvas>
+    <nav class="glass-nav">
+        <div class="logo">FRONTLAB <span class="highlight">STUDIO</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#hero" onclick="closeMenu()">Início</a></li>
+            <li><a href="#niveis" onclick="closeMenu()">Soluções</a></li>
+            <li><a href="#portfolio" onclick="closeMenu()">Portfólio</a></li>
+            <li><a href="#processo" onclick="closeMenu()">Como Funciona</a></li>
+            <li><a href="#faq" onclick="closeMenu()">Dúvidas</a></li>
+            <li><a href="https://wa.me/554384137743" target="_blank" class="btn-cta">Contratar</a></li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h1 class="typewriter-effect">O Futuro do seu Negócio é Digital.</h1>
+            <p class="hidden">Tecnologia de alta performance para empresas que buscam liderança e autoridade no mercado.
+            </p>
+            <div class="hero-stats">
+                <div class="stat hidden">
+                    <span>+4</span> <span>Níveis de Evolução</span>
+                </div>
+                <div class="stat hidden">
+                    <span>100%</span> <span>Foco em Vendas</span>
+                </div>
+            </div>
+            <a href="#niveis" class="btn-hero hidden">Descobrir meu Nível <i class="fa-solid fa-arrow-down"></i></a>
+        </div>
+    </header>
+
+    <section id="niveis">
+        <h2 class="section-title hidden">Qual o nível da sua empresa hoje?</h2>
+        <p class="section-subtitle hidden">Escolha a tecnologia ideal para o seu momento atual.</p>
+
+        <div class="grid-container">
+            <div class="card-level hidden">
+                <div class="level-header">🚀 Nível 1: Start</div>
+                <h3>Presença Imediata</h3>
+                <p>Para quem quer ser encontrado hoje. O seu cartão de visitas digital e profissional.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Link Único e Organizado</li>
+                    <li><i class="fa-solid fa-check"></i> Botões de WhatsApp/Maps</li>
+                </ul>
+            </div>
+
+            <div class="card-level destaque-level hidden">
+                <div class="level-badge">Mais Procurado</div>
+                <div class="level-header">🎯 Nível 2: Pro</div>
+                <h3>Máquina de Vendas</h3>
+                <p>Para quem precisa vender produtos ou serviços. Estrutura pronta para anúncios.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Foco em Conversão</li>
+                    <li><i class="fa-solid fa-check"></i> Preparado para Google Ads</li>
+                </ul>
+            </div>
+
+            <div class="card-level hidden">
+                <div class="level-header">🏢 Nível 3: Elite</div>
+                <h3>Autoridade Corporativa</h3>
+                <p>Para empresas que buscam liderança. A sede digital completa do seu negócio.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Multi-páginas (Institucional)</li>
+                    <li><i class="fa-solid fa-check"></i> Otimizado para SEO (Google)</li>
+                </ul>
+            </div>
+
+            <div class="card-level hidden">
+                <div class="level-header">💎 Nível 4: High-End</div>
+                <h3>Exclusividade Total</h3>
+                <p>Sua ideia inovadora construída do zero com design cinematográfico.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Animações Avançadas</li>
+                    <li><i class="fa-solid fa-check"></i> Design Único no Mercado</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="aceleracao">
+        <h2 class="section-title hidden">Acelere seus Resultados</h2>
+        <p class="section-subtitle hidden">Não adianta ter um site rápido se ninguém entrar nele.</p>
+
+        <div class="grid-container">
+
+            <div class="card-level hidden">
+                <div class="level-header">Essencial para Local</div>
+                <h3>📍 Google Maps Turbo</h3>
+                <p>Colocamos sua empresa no topo das pesquisas locais. Otimização completa da ficha com fotos e SEO.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Ficha Otimizada</li>
+                    <li><i class="fa-solid fa-check"></i> Fotos Profissionais</li>
+                </ul>
+            </div>
+
+            <div class="card-level destaque-level hidden">
+                <div class="level-badge">Recomendado</div>
+                <div class="level-header">Vendas Imediatas</div>
+                <h3>🚀 Tráfego Pago (Ads)</h3>
+                <p>Anúncios que perseguem seu cliente ideal no Instagram e Google. Não espere a sorte.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-bolt"></i> Gestão de Anúncios</li>
+                    <li><i class="fa-solid fa-bolt"></i> Relatório Mensal</li>
+                </ul>
+            </div>
+
+            <div class="card-level hidden">
+                <div class="level-header">Inteligência Artificial</div>
+                <h3>🕵️‍♂️ Pixel Rastreador</h3>
+                <p>Instalamos o código que "marca" quem visitou seu site para vender novamente para eles.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Remarketing</li>
+                    <li><i class="fa-solid fa-check"></i> Recuperação de Venda</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="cta-container hidden">
+            <a href="https://wa.me/554384137743?text=Quero%20acelerar%20meu%20site%20com%20trafego!" target="_blank"
+                class="btn-hero btn-acelerar">
+                QUERO ACELERAR MEU SITE <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-title hidden">Portfólio por Setor</h2>
+        <p class="section-subtitle hidden">Veja a tecnologia aplicada ao seu nicho.</p>
+
+        <div class="grid-container">
+
+            <div class="card-holo" data-tilt>
+                <div class="card-glass border-green">
+                    <div class="icon-box text-green"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <h3>Saúde & Clínicas</h3>
+                    <p><span class="destaque-tech text-green">Agenda lotada sem esforço.</span> Visual profissional que
+                        passa segurança e facilita o agendamento de consultas.</p>
+                    <a href="projetos/saude-clinicas/index.html" target="_blank" rel="noopener noreferrer"
+                        class="link-card text-green">Explorar Consultório Digital <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card-holo" data-tilt>
+                <div class="card-glass border-blue">
+                    <div class="icon-box text-blue"><i class="fa-solid fa-building"></i></div>
+                    <h3>Corporativo & Adv.</h3>
+                    <p><span class="destaque-tech text-blue">Sua sede digital que impõe respeito.</span> Tecnologia para
+                        sua empresa ser vista como líder e autoridade no mercado.</p>
+                    <a href="projetos/corporativo/index.html" target="_blank" rel="noopener noreferrer"
+                        class="link-card text-blue">Acessar Sede Virtual <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card-holo" data-tilt>
+                <div class="card-glass border-purple">
+                    <div class="icon-box text-purple"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <h3>E-commerce & Varejo</h3>
+                    <p><span class="destaque-tech text-purple">Sua loja aberta 24h por dia.</span> O caminho mais curto
+                        entre o seu produto e o bolso do cliente, sem travamentos.</p>
+                    <a href="projetos/e-commerce-varejo/index.html" target="_blank" rel="noopener noreferrer"
+                        class="link-card text-purple">Entrar na Loja Inteligente <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card-holo" data-tilt>
+                <div class="card-glass border-orange">
+                    <div class="icon-box text-orange"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Fitness & Esporte</h3>
+                    <p><span class="destaque-tech text-orange">A cara da sua academia no digital.</span> Um site moderno
+                        que motiva o seu aluno e valoriza seus planos.</p>
+                    <a href="projetos/fitnes-esporte/index.html" target="_blank" rel="noopener noreferrer"
+                        class="link-card text-orange">Ver Experiência de Performance <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card-holo" data-tilt>
+                <div class="card-glass border-yellow">
+                    <div class="icon-box text-yellow"><i class="fa-solid fa-utensils"></i></div>
+                    <h3>Gastronomia</h3>
+                    <p><span class="destaque-tech text-yellow">Um cardápio que dá fome.</span> Facilite pedidos e
+                        reservas sem depender apenas de aplicativos de entrega.</p>
+                    <a href="projetos/gastronomia/index.html" target="_blank" rel="noopener noreferrer"
+                        class="link-card text-yellow">Ver Cardápio Interativo <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="card-holo destaque" data-tilt>
+                <div class="card-glass border-gold">
+                    <div class="icon-box text-gold"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Projetos Custom</h3>
+                    <p>Sua ideia não existe ainda? Eu programo ela do zero com tecnologia de ponta.</p>
+                    <a href="https://wa.me/554384137743?text=Ol%C3%A1%2C%20tenho%20uma%20ideia%20de%20projeto%20exclusivo%20e%20preciso%20de%20desenvolvimento%20com%20alta%20tecnologia."
+                        target="_blank" rel="external nofollow noopener noreferrer" class="link-card text-gold">Explorar
+                        Projeto Exclusivo <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="processo">
+        <h2 class="section-title hidden">Como Funciona?</h2>
+        <div class="process-steps">
+            <div class="step hidden">
+                <div class="step-number">01</div>
+                <h3>Conversa Estratégica</h3>
+                <p>Eu entendo o seu modelo de negócio e indico qual nível de tecnologia você precisa.</p>
+            </div>
+            <div class="step hidden">
+                <div class="step-number">02</div>
+                <h3>Engenharia Tech</h3>
+                <p>Eu programo sua solução do zero. Nada de sites lentos ou copiados.</p>
+            </div>
+            <div class="step hidden">
+                <div class="step-number">03</div>
+                <h3>Gestão Completa</h3>
+                <p>Coloco no ar, configuro a segurança e você só se preocupa em atender os clientes.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2 class="section-title hidden">Dúvidas Frequentes</h2>
+        <div class="faq-container hidden">
+            <details>
+                <summary>Eu preciso entender de tecnologia/código?</summary>
+                <p>Absolutamente não. Eu cuido de 100% da parte técnica (servidores, código, segurança). Você foca
+                    apenas em gerenciar sua empresa.</p>
+            </details>
+            <details>
+                <summary>Vou começar a vender assim que o site ficar pronto?</summary>
+                <p>O site é a sua "loja de elite". Para vender, você precisa trazer pessoas (tráfego). Eu entrego o site
+                    tecnicamente pronto para anúncios, mas você precisará investir em marketing/anúncios para gerar
+                    fluxo.</p>
+            </details>
+            <details>
+                <summary>Quanto custa a manutenção mensal?</summary>
+                <p>Ofereço o plano de Gestão Profissional por R$ 39,90/mês, que inclui hospedagem premium, segurança SSL
+                    e suporte técnico para o site nunca sair do ar.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <h2 class="hidden">Pronto para elevar o nível?</h2>
+
+            <a href="https://wa.me/554384137743?text=Ol%C3%A1!%20Estou%20pronto%20para%20elevar%20o%20n%C3%ADvel%20do%20meu%20neg%C3%B3cio.%20Como%20podemos%20come%C3%A7ar%3F"
+                target="_blank" rel="external nofollow noopener noreferrer" class="btn-whatsapp hidden">
+                <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+
+            <p class="copy">© 2026 FRONTLAB STUDIO - High End Web Development<br>Ambiente de Demonstração Seguro.</p>
+        </div>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>

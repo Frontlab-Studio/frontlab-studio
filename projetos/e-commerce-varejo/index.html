@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA | Moda & Estilo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Prata&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav id="navbar">
+        <div class="container nav-flex">
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="logo">LUMINA<span class="dot">.</span></div>
+
+            <ul class="menu">
+                <li><a href="#lancamentos">Lançamentos</a></li>
+                
+                <li><a href="#ofertas" class="sale-link">Ofertas</a></li>
+                
+                <li><a href="#Cupom">Cupom</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <div class="cart-icon" onclick="openCart()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-menu">
+            <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
+            <ul class="mobile-links">
+                <li><a href="#lancamentos" class="close-menu">Lançamentos</a></li>
+                <li><a href="#ofertas" class="close-menu sale-link">Ofertas</a></li>
+                <li><a href="#Cupom" class="close-menu">Cupom</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <span class="hero-tag">COLEÇÃO VERÃO 2026</span>
+            <h1>Estilo que define <br>quem você é.</h1>
+            <p>Descubra a nova coleção com tecidos sustentáveis e design minimalista.</p>
+            <a href="#lancamentos" class="btn-shop">Ver Coleção <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <section class="benefits">
+        <div class="container benefits-grid">
+            <div class="benefit-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <h4>Frete Grátis</h4>
+                    <p>Para todo o Brasil</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-solid fa-rotate-left"></i>
+                <div>
+                    <h4>Troca Fácil</h4>
+                    <p>Até 30 dias para devolver</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <i class="fa-regular fa-credit-card"></i>
+                <div>
+                    <h4>Até 10x Sem Juros</h4>
+                    <p>No cartão de crédito</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lancamentos" class="showcase">
+        <div class="container">
+            <div class="section-header reveal-bottom">
+                <h2>Mais Vendidos</h2>
+                <a href="#" class="view-all">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card reveal-bottom">
+                    <div class="product-image">
+                        <span class="tag-new">NOVO</span>
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Jaqueta">
+                        <button class="btn-add-cart"
+                            onclick="addToCart('Jaqueta Urban Tech', 299.90,'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">Adicionar</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="category">Casacos</span>
+                        <h3>Jaqueta Urban Tech</h3>
+                        <div class="price">R$ 299,90</div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal-bottom delay-100">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Camiseta">
+                        <button class="btn-add-cart"
+                            onclick="addToCart('Camiseta Algodão Egípcio', 89.90, 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">Adicionar</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="category">Básico</span>
+                        <h3>Camiseta Algodão Egípcio</h3>
+                        <div class="price">R$ 89,90</div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal-bottom delay-200">
+                    <div class="product-image">
+                        <span class="tag-sale">-20%</span>
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Tênis">
+                        <button class="btn-add-cart"
+                            onclick="addToCart('Sneaker Runner Red', 399.90, 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">Adicionar</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="category">Calçados</span>
+                        <h3>Sneaker Runner Red</h3>
+                        <div class="price">
+                            <span class="old-price">R$ 499,90</span> R$ 399,90
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal-bottom delay-300">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                            alt="Camisa">
+                        <button class="btn-add-cart"
+                            onclick="addToCart('Camisa Slim Fit', 159.90, 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80')">Adicionar</button>
+                    </div>
+                    <div class="product-info">
+                        <span class="category">Masculino</span>
+                        <h3>Camisa Slim Fit</h3>
+                        <div class="price">R$ 159,90</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ofertas" class="promo-banner">
+        <div class="container promo-content reveal-bottom">
+            <div class="promo-text">
+                <span class="promo-tag">OFERTA RELÂMPAGO</span>
+                <h2>50% OFF na segunda peça</h2>
+                <p>Aproveite nossa seleção especial. A oferta acaba em:</p>
+                <div class="countdown">
+                    <div class="time-box">05<span>H</span></div>
+                    <div class="colon">:</div>
+                    <div class="time-box">42<span>M</span></div>
+                    <div class="colon">:</div>
+                    <div class="time-box">18<span>S</span></div>
+                </div>
+                <a href="#lancamentos" class="btn-shop white" id="Cupom">Aproveitar Agora</a>
+            </div>
+            <div class="promo-img">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+                    alt="Modelo">
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h3>Entre para o Clube</h3>
+            <p>Receba novidades e ganhe <strong>10% OFF</strong> na primeira compra.</p>
+            <form class="newsletter-form" onsubmit="joinClub(event)">
+                <input type="email" id="email-input" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Quero meu Cupom</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo">LUMINA<span class="dot">.</span></div>
+                <p>Moda atemporal para quem busca sofisticação no dia a dia.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Ajuda</h4>
+                <a href="#">Trocas e Devoluções</a>
+                <a href="#">Meus Pedidos</a>
+                <a href="#">Fale Conosco</a>
+            </div>
+            <div class="footer-col">
+                <h4>Pagamento</h4>
+                <div class="payment-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-pix"></i>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 Lumina Store. Desenvolvido por  Desenvolvido por <a href="https://frontlabstudio.com.br/" id="author" target="_blank" rel="author">Frontlab Studio.</a></p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Seu Carrinho</h3>
+                <span class="close-cart"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+
+            <div class="cart-items" id="cart-items-container">
+                <p class="empty-msg">Seu carrinho está vazio.</p>
+            </div>
+
+            <div class="cart-footer">
+                <div class="total">Total: <span id="cart-total">R$ 0,00</span></div>
+                <button onclick="checkoutToWhatsApp()" class="btn-whatsapp-checkout">
+                    <i class="fa-brands fa-whatsapp"></i> Finalizar no WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
