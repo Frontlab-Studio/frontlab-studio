@@ -105,6 +105,8 @@ a {
     display: none;
     cursor: pointer;
     font-size: 1.5rem;
+    position: relative;
+    z-index: 1001;
 }
 
 /* --- HERO (100dvh) --- */
