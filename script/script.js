@@ -1,27 +1,4 @@
-const cards = document.querySelectorAll('.card-holo');
-
-cards.forEach(card => {
-    const glass = card.querySelector('.card-glass');
-
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = (centerY - y) / 10;
-        const rotateY = (x - centerX) / 10;
-
-        glass.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        glass.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale(1)`;
-    });
-});
-
+// --- BACKGROUND DE PARTÍCULAS (TECH-BG) ---
 const canvas = document.getElementById('tech-bg');
 const ctx = canvas.getContext('2d');
 
@@ -107,6 +84,7 @@ function connect() {
 init();
 animate();
 
+// --- INTERSECTION OBSERVER (ANIMAÇÕES NO SCROLL) ---
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -117,26 +95,35 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
+
+
+// --- MENU HAMBÚRGUER CUSTOMIZADO ---
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
-    const menuIcon = document.querySelector('.menu-toggle i');
+    const menuToggle = document.querySelector('.menu-toggle');
 
+    // Alterna a classe 'active' em ambos
     navLinks.classList.toggle('active');
-
-    if (navLinks.classList.contains('active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-xmark');
-    } else {
-        menuIcon.classList.remove('fa-xmark');
-        menuIcon.classList.add('fa-bars');
-    }
+    menuToggle.classList.toggle('active');
 }
 
 function closeMenu() {
     const navLinks = document.querySelector('.nav-links');
-    const menuIcon = document.querySelector('.menu-toggle i');
+    const menuToggle = document.querySelector('.menu-toggle');
 
+    // Remove a classe 'active' ao clicar num link
     navLinks.classList.remove('active');
-    menuIcon.classList.remove('fa-xmark');
-    menuIcon.classList.add('fa-bars');
+    menuToggle.classList.remove('active');
 }
+
+// --- PROVA TÉCNICA: TEMPO DE CARREGAMENTO NO RODAPÉ ---
+window.onload = () => {
+    // Calcula o tempo de carregamento real via Performance API
+    const loadTime = (performance.now() / 1000).toFixed(2);
+
+    // Injeta a métrica no rodapé para provar a velocidade aos parceiros B2B
+    const copyElement = document.querySelector('.copy');
+    if (copyElement) {
+        copyElement.innerHTML += `<br><span style="font-family: 'JetBrains Mono', monospace; color: #10B981; font-size: 0.8rem; margin-top: 10px; display: block;"><i class="fa-solid fa-bolt"></i> Página carregada na unha em ${loadTime}s</span>`;
+    }
+};
