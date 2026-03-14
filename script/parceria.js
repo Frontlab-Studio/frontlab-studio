@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 
 let particlesArray;
 
-function resizeCanvas() {
+function resizeCanvas() {   
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
