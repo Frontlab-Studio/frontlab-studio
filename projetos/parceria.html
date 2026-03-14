@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Frontlab Studio - Desenvolvimento Front-end de alta performance. Código puro, PageSpeed 90+ e parcerias estratégicas para designers e agências.">
+    <title>FRONTLAB STUDIO | O Braço Técnico da sua Agência</title>
+    <link rel="stylesheet" href="../style/projeto.css">
+    <link rel="shortcut icon" href="../img/icon-site.png" type="image/x-png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="img/icon-site.png" type="image/x-png">
+</head>
+
+<body>
+
+    <canvas id="tech-bg"></canvas> 
+    <nav class="glass-nav">
+        <div class="logo">FRONTLAB <span class="highlight">STUDIO</span></div>
+
+        <ul class="nav-links">
+            <li><a href="#hero" onclick="closeMenu()">Início</a></li>
+            <li><a href="#niveis" onclick="closeMenu()">Soluções</a></li>
+            <li><a href="#performance" onclick="closeMenu()">Prova Técnica</a></li>
+            <li><a href="#parcerias" onclick="closeMenu()">Parcerias B2B</a></li>
+            <li><a href="#faq" onclick="closeMenu()">Dúvidas</a></li>
+            <li><a href="https://wa.me/554384137743?text=Fala%20Lucas!%20Acessei%20o%20site%20da%20Frontlab%20e%20tenho%20interesse%20na%20parceria%20de%2020%25.%20Quero%20escalar%20minhas%20entregas%20sem%20tocar%20em%20c%C3%B3digo."
+                    target="_blank" class="btn-cta">Seja um Parceiro</a></li>
+        </ul>
+
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h1 class="typewriter-effect">Código Puro. Performance Extrema.</h1>
+            <h2 class="hero-subtitle hidden">Seu Design sem Limites.</h2>
+            <p class="hidden">Transformamos layouts de alta fidelidade em sites que carregam em menos de 1 segundo. Seja
+                nosso parceiro técnico e garanta 20% de repasse em cada projeto.</p>
+
+            <a href="https://wa.me/554384137743?text=Lucas%2C%20tenho%20um%20layout%20pronto%20aqui%20e%20preciso%20de%20uma%20estimativa%20para%20transformar%20isso%20em%20c%C3%B3digo%20puro.%20Como%20iniciamos%3F"
+                target="_blank" class="btn-hero btn-acelerar hidden">
+                FECHAR PARCERIA TÉCNICA <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </header>
+
+    <section id="niveis">
+        <h2 class="section-title hidden">Arquitetura de Soluções</h2>
+        <p class="section-subtitle hidden">Tecnologia sob medida para a demanda do seu cliente.</p>
+
+        <div class="grid-container">
+            <div class="card-level hidden">
+                <div class="level-header">🚀 Nível 1: Start</div>
+                <h3>Presença Imediata</h3>
+                <p>O cartão de visitas digital de carregamento instantâneo. Sem distrações.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Link Único e Organizado</li>
+                    <li><i class="fa-solid fa-check"></i> Botões de Ação Direta</li>
+                </ul>
+            </div>
+
+            <div class="card-level destaque-level hidden">
+                <div class="level-badge">Foco em Tráfego</div>
+                <div class="level-header">🎯 Nível 2: Pro</div>
+                <h3>Máquina de Vendas</h3>
+                <p><strong>Ideal para Gestores de Tráfego:</strong> landing pages com taxa de conversão máxima, sem
+                    pesar no carregamento.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-bolt"></i> Otimização para Ads</li>
+                    <li><i class="fa-solid fa-bolt"></i> Estrutura de Alta Conversão</li>
+                </ul>
+            </div>
+
+            <div class="card-level hidden">
+                <div class="level-header">🏢 Nível 3: Elite</div>
+                <h3>Autoridade Corporativa</h3>
+                <p>Sede digital completa. Ideal para empresas que precisam de SEO técnico agressivo.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Multi-páginas (Institucional)</li>
+                    <li><i class="fa-solid fa-check"></i> SEO Técnico Nativo</li>
+                </ul>
+            </div>
+
+            <div class="card-level hidden">
+                <div class="level-header">💎 Nível 4: High-End</div>
+                <h3>Exclusividade Total</h3>
+                <p>Seu design do Figma construído do zero com interações cinematográficas.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-check"></i> Animações Customizadas</li>
+                    <li><i class="fa-solid fa-check"></i> Zero Limitações Visuais</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance">
+        <h2 class="section-title hidden">Por que ignoramos o WordPress?</h2>
+        <p class="section-subtitle hidden">O seu cliente merece performance real, não um template pesado que espanta o
+            tráfego pago.</p>
+
+        <div class="grid-container">
+            <div class="card-level destaque-level hidden" style="text-align: center;">
+                <h3 style="font-family: var(--fonte-tech); font-size: 4rem; color: #10B981; margin-bottom: 0;">100</h3>
+                <p style="font-family: var(--fonte-tech); color: #10B981; letter-spacing: 2px;">PERFORMANCE SCORE</p>
+                <p style="margin-top: 20px;">Sites desenvolvidos na unha (HTML, CSS, JS puro) garantem notas máximas no
+                    Google PageSpeed, barateando o custo do clique nos anúncios.</p>
+            </div>
+
+            <div class="card-level hidden">
+                <div class="level-header">Código Limpo vs Templates</div>
+                <h3><i class="fa-solid fa-code" style="color: var(--primary);"></i> Engenharia Pura</h3>
+                <p>Nenhum plugin desnecessário. Nenhum código inchado. Entregamos exatamente o que o navegador precisa
+                    para renderizar a página em milissegundos.</p>
+                <ul class="level-features">
+                    <li><i class="fa-solid fa-xmark" style="color: #ef4444;"></i> Sem construtores lentos (Elementor)
+                    </li>
+                    <li><i class="fa-solid fa-check" style="color: #10B981;"></i> DOM limpo e otimizado</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="parcerias">
+        <h2 class="section-title hidden">O Braço Técnico que sua Agência Precisa</h2>
+        <p class="section-subtitle hidden">Escale sua operação entregando sites de alto padrão sem tocar em uma linha de
+            código.</p>
+
+        <div class="process-steps">
+            <div class="step hidden">
+                <div class="step-number">01</div>
+                <h3>Foco Total no Design</h3>
+                <p>Você cria as interfaces incríveis no Figma. Nós assumimos 100% da codificação. Seu único trabalho é
+                    aprovar a fidelidade visual.</p>
+            </div>
+            <div class="step hidden">
+                <div class="step-number">02</div>
+                <h3 style="color: var(--color-green);">Lucratividade Direta</h3>
+                <p>Traga o cliente, forneça o layout e garanta <strong>20% de comissão direta</strong> no valor do setup
+                    do projeto. Sem burocracia.</p>
+            </div>
+            <div class="step hidden">
+                <div class="step-number">03</div>
+                <h3>Segurança e Entrega</h3>
+                <p>Garantia de código limpo, SEO técnico impecável e entrega no prazo. Você não perde tempo com suporte
+                    técnico ou servidores lentos.</p>
+            </div>
+        </div>
+
+        <div class="cta-container hidden" style="margin-top: 50px; text-align: center;">
+            <a href="https://wa.me/554384137743?text=Tenho%20um%20layout%20e%20quero%20fazer%20uma%20parceria!"
+                target="_blank" class="btn-hero btn-acelerar"
+                style="background: var(--glass); border: 1px solid var(--primary);">
+                ENVIAR PROJETO <i class="fa-solid fa-paper-plane"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2 class="section-title hidden">Dúvidas Estratégicas</h2>
+        <div class="faq-container hidden">
+            <details>
+                <summary>Como funciona o repasse dos 20%?</summary>
+                <p>Assim que o cliente aprova o orçamento e realiza o pagamento inicial do setup de desenvolvimento, 20%
+                    do valor total negociado é transferido imediatamente para você via PIX.</p>
+            </details>
+            <details>
+                <summary>Vocês alteram o meu design?</summary>
+                <p>Não. O modelo High-End garante Pixel Perfect. Se algo for tecnicamente inviável para a performance
+                    web, discutiremos alternativas com você antes de codar.</p>
+            </details>
+            <details>
+                <summary>Quem dá o suporte para o cliente final?</summary>
+                <p>A Frontlab Studio. Após a entrega, oferecemos um plano de Gestão Profissional (hospedagem e
+                    manutenção) direto para o cliente. Você não se incomoda com quedas de servidor.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <h2 class="hidden">Vamos codar o seu próximo projeto?</h2>
+
+            <div class="social-links hidden" style="margin: 30px 0; font-size: 1.5rem;">
+                <a href="https://www.instagram.com/frontlab.studio" target="_blank"
+                    style="margin: 0 15px; color: #fff;"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61588626531827&rdid" target="_blank"
+                    style="margin: 0 15px; color: #fff;"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+
+            <a href="https://wa.me/554384137743?text=Ol%C3%A1%20Lucas!%20Quero%20elevar%20o%20n%C3%ADvel%20t%C3%A9cnico%20dos%20meus%20projetos%20para%20aumentar%20a%20taxa%20de%20convers%C3%A3o.%20Podemos%20conversar%3F"
+                target="_blank" rel="external nofollow noopener noreferrer" class="btn-whatsapp hidden">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366; font-size: 1.5rem;"></i> Iniciar Parceria
+            </a>
+
+            <p class="copy">© 2026 FRONTLAB STUDIO - High End Web Development<br>Ambiente B2B Exclusivo.</p>
+        </div>
+    </footer>
+
+    <script src="../script/projeto.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,914 @@
+:root {
+    --bg-color: #030303;
+    --text-color: #ffffff;
+    --primary-b2b: #00f3ff;
+    --primary-b2c: #10B981;
+    --glass: rgba(255, 255, 255, 0.03);
+    --fonte-padrao: 'Inter', sans-serif;
+    --fonte-tech: 'JetBrains Mono', monospace;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--fonte-padrao);
+    overflow-x: hidden;
+    /* Evita apenas a barra de rolagem horizontal */
+}
+
+/* --- INTRO ANIMATION --- */
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.glitch-text {
+    font-family: var(--fonte-tech);
+    font-size: clamp(2rem, 5vw, 5rem);
+    position: relative;
+    color: white;
+    letter-spacing: 5px;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--primary-b2b);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--primary-b2c);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #fff;
+    animation: load 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes load {
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip-path: inset(20% 0 80% 0);
+    }
+
+    20% {
+        clip-path: inset(60% 0 10% 0);
+    }
+
+    40% {
+        clip-path: inset(40% 0 50% 0);
+    }
+
+    60% {
+        clip-path: inset(80% 0 5% 0);
+    }
+
+    80% {
+        clip-path: inset(10% 0 70% 0);
+    }
+
+    100% {
+        clip-path: inset(30% 0 20% 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip-path: inset(10% 0 60% 0);
+    }
+
+    20% {
+        clip-path: inset(30% 0 20% 0);
+    }
+
+    40% {
+        clip-path: inset(70% 0 10% 0);
+    }
+
+    60% {
+        clip-path: inset(20% 0 50% 0);
+    }
+
+    80% {
+        clip-path: inset(90% 0 5% 0);
+    }
+
+    100% {
+        clip-path: inset(50% 0 30% 0);
+    }
+}
+
+/* --- THE HUB --- */
+#tech-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hub-hidden {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+#hub-main {
+    width: 100%;
+    height: 100vh;
+    /* Garante que o hub ocupe a primeira tela inteira */
+    height: 100dvh;
+    transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.split-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.portal {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    transition: flex 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.portal:last-child {
+    border: none;
+}
+
+.portal-content {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
+    padding: 40px;
+    text-align: left;
+    transform: translateY(20px);
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.portal:hover {
+    flex: 1.5;
+    /* Expande ao passar o mouse */
+}
+
+.portal:hover .portal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.badge {
+    font-family: var(--fonte-tech);
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.tech-badge {
+    border: 1px solid var(--primary-b2b);
+    color: var(--primary-b2b);
+}
+
+.biz-badge {
+    border: 1px solid var(--primary-b2c);
+    color: var(--primary-b2c);
+}
+
+.portal h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.portal p {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.btn-ghost {
+    font-family: var(--fonte-tech);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-ghost .arrow {
+    transition: transform 0.3s ease;
+}
+
+.portal:hover .btn-ghost .arrow {
+    transform: translateX(10px);
+}
+
+/* Holographic Overlays */
+.overlay-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 1;
+}
+
+.glow-blue {
+    background: radial-gradient(circle at center, rgba(0, 243, 255, 0.1) 0%, transparent 70%);
+}
+
+.glow-green {
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+}
+
+.portal:hover .overlay-glow {
+    opacity: 1;
+}
+
+/* Mobile fallback */
+@media (max-width: 900px) {
+    .split-container {
+        flex-direction: column;
+    }
+
+    .portal {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .portal:hover {
+        flex: 1.2;
+    }
+
+    .portal h2 {
+        font-size: 2rem;
+    }
+}
+
+/* --- TRANSIÇÕES DE ROTA (Efeito Espelho) --- */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    pointer-events: none;
+    z-index: 99999;
+    overflow: hidden;
+}
+
+/* Base das fatias */
+.neural-slice {
+    position: absolute;
+    width: 130%;
+    /* Margem extra para cobrir a tela devido ao ângulo */
+    height: 10vh;
+    will-change: transform, left, right;
+}
+
+/* Animação B2B (Azul - Rasga da Esquerda para a Direita) */
+.slice-left {
+    left: -150%;
+    transform: skewX(-45deg);
+    background: var(--primary-b2b);
+    box-shadow: 0 0 20px var(--primary-b2b);
+    transition: left 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+/* Animação B2C (Verde - Rasga da Direita para a Esquerda) */
+.slice-right {
+    right: -150%;
+    transform: skewX(45deg);
+    /* Ângulo invertido para simetria */
+    background: var(--primary-b2c);
+    box-shadow: 0 0 20px var(--primary-b2c);
+    transition: right 0.8s cubic-bezier(0.8, 0, 0.2, 1);
+}
+
+/* --- SEÇÃO 2: MANIFESTO (Refatorado para não cortar) --- */
+.manifesto-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    /* Trava qualquer vazamento horizontal na seção */
+    padding: 100px 0;
+    z-index: 10;
+}
+
+.kinetic-container {
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 80px;
+}
+
+.k-line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* O SEGREDO: Centraliza o eixo antes de mover */
+    white-space: nowrap;
+}
+
+.k-text {
+    /* Reduzi o valor máximo de 10rem para 7rem para caber no PC com folga */
+    font-size: clamp(2rem, 5vw, 7rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--text-color);
+    letter-spacing: -2px;
+    will-change: transform;
+    /* Aviso para a GPU renderizar o movimento mais liso */
+}
+
+/* Efeito de texto vazado (High-End) */
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+}
+
+.manifesto-core {
+    max-width: 1200px;
+    /* Aumentei a largura máxima para o texto respirar */
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.terminal-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    font-family: var(--fonte-tech);
+    /* O pulo do gato: vai de 2rem no mobile até 4.5rem em telas gigantes */
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    color: #10B981;
+    line-height: 1.2;
+    font-weight: 700;
+    /* Deixa a fonte mais densa/impactante */
+}
+
+.prompt-icon {
+    color: #fff;
+    opacity: 0.5;
+    margin-top: 5px;
+    /* Alinhamento fino para bater com a primeira linha de texto */
+}
+
+.cursor-blink {
+    display: inline-block;
+    width: 0.5em;
+    /* Usar 'em' faz o bloco crescer exatamente no tamanho da fonte nova */
+    height: 1.1em;
+    background-color: #10B981;
+    vertical-align: middle;
+    margin-left: 10px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- SEÇÃO 3: SALA DAS MÁQUINAS --- */
+.machine-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 10;
+    background: radial-gradient(circle at center, #0a0a0a 0%, var(--bg-color) 70%);
+}
+
+.machine-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.machine-header h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.machine-header p {
+    color: #888;
+    font-family: var(--fonte-tech);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+/* O Contêiner do Núcleo com animação de flutuação */
+.core-container {
+    position: relative;
+    width: clamp(280px, 40vw, 400px);
+    height: clamp(280px, 40vw, 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: crosshair;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.core-container:hover {
+    transform: scale(1.05);
+    /* Dá um pequeno "salto" no hover */
+}
+
+/* Anel Externo Giratório (O Campo de Força) */
+.core-container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px dashed rgba(255, 255, 255, 0.1);
+    border-top: 2px solid var(--primary-b2b);
+    border-bottom: 2px solid var(--primary-b2c);
+    animation: spin-core 10s linear infinite;
+    transition: all 0.5s ease;
+}
+
+.core-container:hover::before {
+    border: 2px solid var(--primary-b2b);
+    /* Fica todo azul no hover */
+    animation: spin-core 3s linear infinite;
+    /* Gira mais rápido ao escanear */
+}
+
+/* A Esfera Interna */
+.speed-hologram {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 60px rgba(16, 185, 129, 0.15);
+    /* Brilho Verde Base */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+/* Estado Inicial (A Nota) */
+.score-circle {
+    text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.score-value {
+    font-family: var(--fonte-tech);
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-weight: 700;
+    color: #10B981;
+    /* Verde PageSpeed */
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+.score-label {
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 5px;
+    margin-top: 5px;
+}
+
+/* Modo Raio-X (Oculto) */
+.xray-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 243, 255, 0.05);
+    /* Fundo sutilmente azul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(1.2);
+    /* Nasce um pouco maior e diminui */
+    transition: all 0.4s ease;
+    font-family: var(--fonte-tech);
+    color: var(--primary-b2b);
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    text-align: left;
+}
+
+/* --- MÁGICA DO HOVER --- */
+.core-container:hover .score-circle {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.core-container:hover .xray-code {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.core-container:hover .speed-hologram {
+    box-shadow: 0 0 80px rgba(0, 243, 255, 0.3);
+    /* Brilho muda pra Azul Raio-X */
+    border-color: rgba(0, 243, 255, 0.3);
+}
+
+/* Linha de Scanner (Laser que sobe e desce no modo Raio-X) */
+.xray-code::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 243, 255, 0.6), transparent);
+    animation: scanline 2.5s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes spin-core {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scanline {
+    0% {
+        top: -20%;
+    }
+
+    100% {
+        top: 120%;
+    }
+}
+
+/* --- SEÇÃO 4: O ARQUITETO (3D TILT & SPOTLIGHT) --- */
+.architect-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 10;
+}
+
+.architect-container {
+    perspective: 1000px;
+    /* Cria a profundidade para o efeito 3D */
+    width: 100%;
+    max-width: 800px;
+}
+
+.tilt-card {
+    position: relative;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 60px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    /* Transição suave ao tirar o mouse */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+/* O Feixe de Luz (Spotlight) controlado pelo JS via variáveis CSS */
+.spotlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(255, 255, 255, 0.06),
+            transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tilt-card:hover .spotlight-overlay {
+    opacity: 1;
+}
+
+.tilt-card:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 243, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Conteúdo do Cartão elevado no eixo Z para dar efeito parallax */
+.card-content {
+    position: relative;
+    z-index: 2;
+    transform: translateZ(30px);
+    /* Empurra o texto para "fora" da tela */
+}
+
+.tech-badge-small {
+    font-family: var(--fonte-tech);
+    font-size: 0.75rem;
+    color: var(--primary-b2b);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.architect-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.highlight-blue {
+    background: linear-gradient(90deg, #fff, var(--primary-b2b));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.architect-bio {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.architect-bio strong {
+    color: #fff;
+}
+
+.founder-signature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+}
+
+.avatar-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--bg-color), #1a1a1a);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-b2b);
+    font-size: 1.2rem;
+}
+
+.signature-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.signature-info strong {
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.signature-info span {
+    font-family: var(--fonte-tech);
+    color: #666;
+    font-size: 0.8rem;
+}
+/* --- SEÇÃO 5: O TERMINAL FINAL (FOOTER) --- */
+.terminal-section {
+    min-height: 80vh; /* Não precisa ser 100vh, é o fechamento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px 40px;
+    background-color: #000; /* Preto absoluto para contraste final */
+    position: relative;
+    z-index: 10;
+}
+
+.terminal-window {
+    width: 100%;
+    max-width: 900px;
+    background: rgba(5, 5, 5, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 243, 255, 0.05);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.terminal-header {
+    background: #111;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.term-buttons {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+}
+
+.term-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.expand { background: #27c93f; }
+
+.term-title {
+    width: 100%;
+    text-align: center;
+    font-family: var(--fonte-tech);
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.terminal-body {
+    padding: 30px;
+    font-family: var(--fonte-tech);
+    color: var(--primary-b2c); /* Verde Hacker por padrão */
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    line-height: 1.6;
+    min-height: 300px;
+}
+
+/* Animação do Boot inicial */
+.boot-sequence {
+    margin-bottom: 20px;
+    color: #aaa;
+}
+
+.hidden-cmd {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.show-cmd {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sys-msg {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Links em formato de comando */
+.cmd-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease;
+}
+
+.prompt {
+    color: var(--primary-b2b); /* Azul para o root */
+    margin-right: 10px;
+}
+
+.cmd-exec {
+    color: #fff;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.cmd-desc {
+    color: #666;
+    margin-left: 15px;
+    font-size: 0.9em;
+}
+
+.cmd-link:hover {
+    transform: translateX(10px);
+}
+
+.cmd-link:hover .cmd-exec {
+    color: var(--primary-b2c); /* Fica verde no hover */
+    border-bottom: 1px solid var(--primary-b2c);
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.sys-input-line {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.term-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: var(--primary-b2c);
+    margin-left: 8px;
+    animation: blink 1s step-end infinite;
+}
+
+.copyright-log {
+    margin-top: 50px;
+    color: #444;
+    font-size: 0.8rem;
+    border-top: 1px dashed #222;
+    padding-top: 15px;
+}
