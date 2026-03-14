@@ -313,15 +313,18 @@ body {
         height: 500px;
     }
 
+    /* Trava os dois lados no centro exato da tela do celular com respiro */
     .content-bad,
     .content-good {
-        width: 100%;
-        padding: 20px;
-    }
-
-    .content-bad {
-        right: auto;
-        left: 50%;
+        width: 100% !important;
+        left: 0 !important;
+        right: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 20px !important;
+        /* Mantemos o seu padding aqui! */
     }
 }
 
@@ -649,4 +652,55 @@ body {
     color: #444;
     font-size: 0.9rem;
     font-family: var(--fonte-tech);
+}
+
+/* --- TEXTOS DOS BURACOS DO RAIO-X --- */
+.hole-text {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.bad-hole {
+    left: 0;
+}
+
+.good-hole {
+    right: 0;
+}
+
+.hole-title {
+    font-family: var(--fonte-tech);
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.bad-hole .hole-title {
+    color: #ff4444;
+}
+
+.good-hole .hole-title {
+    color: var(--primary-green);
+}
+
+.hole-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Oculta os textos extras no celular para manter o design limpo */
+@media (max-width: 768px) {
+    .hole-text {
+        display: none;
+    }
 }
