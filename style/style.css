@@ -1059,3 +1059,46 @@ body {
         margin-top: 10px !important;
     }
 }
+
+@media (max-width: 768px) {
+
+    /* Centraliza a Logo na marra */
+    .glass-nav {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 15px 0 !important;
+    }
+
+    .logo {
+        margin: 0 auto !important;
+    }
+
+    /* Mata a animação de passar a mão (Toque do celular) */
+    .portal-side,
+    .portal-content,
+    .btn-portal,
+    .card-holo,
+    .card-glass {
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Ajusta Títulos Gigantes para caber na tela */
+    h1,
+    .hero-content h1,
+    .portal-content h1,
+    .typewriter-effect {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        padding: 0 10px !important;
+    }
+
+    /* Esconde os textos longos para não parecer um livro estreito */
+    .portal-content p,
+    .hero-content p {
+        display: none !important;
+    }
+}
