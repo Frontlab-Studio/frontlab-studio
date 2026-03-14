@@ -21,7 +21,6 @@ body {
     color: var(--text-color);
     font-family: var(--fonte-padrao);
     overflow-x: hidden;
-    /* Evita apenas a barra de rolagem horizontal */
 }
 
 /* --- INTRO ANIMATION --- */
@@ -162,7 +161,6 @@ body {
 #hub-main {
     width: 100%;
     height: 100vh;
-    /* Garante que o hub ocupe a primeira tela inteira */
     height: 100dvh;
     transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -203,7 +201,6 @@ body {
 
 .portal:hover {
     flex: 1.5;
-    /* Expande ao passar o mouse */
 }
 
 .portal:hover .portal-content {
@@ -284,7 +281,6 @@ body {
     opacity: 1;
 }
 
-/* Mobile fallback */
 @media (max-width: 900px) {
     .split-container {
         flex-direction: column;
@@ -317,16 +313,13 @@ body {
     overflow: hidden;
 }
 
-/* Base das fatias */
 .neural-slice {
     position: absolute;
     width: 130%;
-    /* Margem extra para cobrir a tela devido ao ângulo */
     height: 10vh;
     will-change: transform, left, right;
 }
 
-/* Animação B2B (Azul - Rasga da Esquerda para a Direita) */
 .slice-left {
     left: -150%;
     transform: skewX(-45deg);
@@ -334,12 +327,9 @@ body {
     box-shadow: 0 0 20px var(--primary-b2b);
     transition: left 0.8s cubic-bezier(0.8, 0, 0.2, 1);
 }
-
-/* Animação B2C (Verde - Rasga da Direita para a Esquerda) */
 .slice-right {
     right: -150%;
     transform: skewX(45deg);
-    /* Ângulo invertido para simetria */
     background: var(--primary-b2c);
     box-shadow: 0 0 20px var(--primary-b2c);
     transition: right 0.8s cubic-bezier(0.8, 0, 0.2, 1);
@@ -355,7 +345,6 @@ body {
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    /* Trava qualquer vazamento horizontal na seção */
     padding: 100px 0;
     z-index: 10;
 }
@@ -373,12 +362,10 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* O SEGREDO: Centraliza o eixo antes de mover */
     white-space: nowrap;
 }
 
 .k-text {
-    /* Reduzi o valor máximo de 10rem para 7rem para caber no PC com folga */
     font-size: clamp(2rem, 5vw, 7rem);
     font-weight: 900;
     text-transform: uppercase;
@@ -386,10 +373,8 @@ body {
     color: var(--text-color);
     letter-spacing: -2px;
     will-change: transform;
-    /* Aviso para a GPU renderizar o movimento mais liso */
 }
 
-/* Efeito de texto vazado (High-End) */
 .outline-text {
     color: transparent;
     -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
@@ -397,7 +382,6 @@ body {
 
 .manifesto-core {
     max-width: 1200px;
-    /* Aumentei a largura máxima para o texto respirar */
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
@@ -408,25 +392,21 @@ body {
     align-items: flex-start;
     gap: 20px;
     font-family: var(--fonte-tech);
-    /* O pulo do gato: vai de 2rem no mobile até 4.5rem em telas gigantes */
     font-size: clamp(2rem, 5vw, 4.5rem);
     color: #10B981;
     line-height: 1.2;
     font-weight: 700;
-    /* Deixa a fonte mais densa/impactante */
 }
 
 .prompt-icon {
     color: #fff;
     opacity: 0.5;
     margin-top: 5px;
-    /* Alinhamento fino para bater com a primeira linha de texto */
 }
 
 .cursor-blink {
     display: inline-block;
     width: 0.5em;
-    /* Usar 'em' faz o bloco crescer exatamente no tamanho da fonte nova */
     height: 1.1em;
     background-color: #10B981;
     vertical-align: middle;
@@ -478,7 +458,6 @@ body {
     font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
-/* O Contêiner do Núcleo com animação de flutuação */
 .core-container {
     position: relative;
     width: clamp(280px, 40vw, 400px);
@@ -493,10 +472,8 @@ body {
 
 .core-container:hover {
     transform: scale(1.05);
-    /* Dá um pequeno "salto" no hover */
 }
 
-/* Anel Externo Giratório (O Campo de Força) */
 .core-container::before {
     content: '';
     position: absolute;
@@ -512,12 +489,9 @@ body {
 
 .core-container:hover::before {
     border: 2px solid var(--primary-b2b);
-    /* Fica todo azul no hover */
     animation: spin-core 3s linear infinite;
-    /* Gira mais rápido ao escanear */
 }
 
-/* A Esfera Interna */
 .speed-hologram {
     position: relative;
     width: 80%;
@@ -529,14 +503,12 @@ body {
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 0 60px rgba(16, 185, 129, 0.15);
-    /* Brilho Verde Base */
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     transition: all 0.5s ease;
 }
 
-/* Estado Inicial (A Nota) */
 .score-circle {
     text-align: center;
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -547,7 +519,6 @@ body {
     font-size: clamp(4rem, 8vw, 7rem);
     font-weight: 700;
     color: #10B981;
-    /* Verde PageSpeed */
     line-height: 1;
     text-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
 }
@@ -559,7 +530,6 @@ body {
     margin-top: 5px;
 }
 
-/* Modo Raio-X (Oculto) */
 .xray-code {
     position: absolute;
     top: 0;
@@ -567,21 +537,17 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 243, 255, 0.05);
-    /* Fundo sutilmente azul */
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     transform: scale(1.2);
-    /* Nasce um pouco maior e diminui */
     transition: all 0.4s ease;
     font-family: var(--fonte-tech);
     color: var(--primary-b2b);
     font-size: clamp(0.7rem, 1.5vw, 1rem);
     text-align: left;
 }
-
-/* --- MÁGICA DO HOVER --- */
 .core-container:hover .score-circle {
     opacity: 0;
     transform: scale(0.8);
@@ -594,11 +560,9 @@ body {
 
 .core-container:hover .speed-hologram {
     box-shadow: 0 0 80px rgba(0, 243, 255, 0.3);
-    /* Brilho muda pra Azul Raio-X */
     border-color: rgba(0, 243, 255, 0.3);
 }
 
-/* Linha de Scanner (Laser que sobe e desce no modo Raio-X) */
 .xray-code::after {
     content: '';
     position: absolute;
@@ -641,7 +605,6 @@ body {
 
 .architect-container {
     perspective: 1000px;
-    /* Cria a profundidade para o efeito 3D */
     width: 100%;
     max-width: 800px;
 }
@@ -654,12 +617,10 @@ body {
     padding: 60px;
     overflow: hidden;
     backdrop-filter: blur(20px);
-    /* Transição suave ao tirar o mouse */
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
     transform-style: preserve-3d;
 }
 
-/* O Feixe de Luz (Spotlight) controlado pelo JS via variáveis CSS */
 .spotlight-overlay {
     position: absolute;
     top: 0;
@@ -684,12 +645,10 @@ body {
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Conteúdo do Cartão elevado no eixo Z para dar efeito parallax */
 .card-content {
     position: relative;
     z-index: 2;
     transform: translateZ(30px);
-    /* Empurra o texto para "fora" da tela */
 }
 
 .tech-badge-small {
@@ -771,13 +730,11 @@ body {
 /* --- SEÇÃO 5: O TERMINAL FINAL (FOOTER) --- */
 .terminal-section {
     min-height: 80vh;
-    /* Não precisa ser 100vh, é o fechamento */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 100px 20px 40px;
     background-color: #000;
-    /* Preto absoluto para contraste final */
     position: relative;
     z-index: 10;
 }
@@ -845,7 +802,6 @@ body {
     min-height: 300px;
 }
 
-/* Animação do Boot inicial */
 .boot-sequence {
     margin-bottom: 20px;
     color: #aaa;
@@ -867,7 +823,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* Links em formato de comando */
 .cmd-link {
     display: block;
     text-decoration: none;
@@ -877,7 +832,6 @@ body {
 
 .prompt {
     color: var(--primary-b2b);
-    /* Azul para o root */
     margin-right: 10px;
 }
 
@@ -899,7 +853,6 @@ body {
 
 .cmd-link:hover .cmd-exec {
     color: var(--primary-b2c);
-    /* Fica verde no hover */
     border-bottom: 1px solid var(--primary-b2c);
     text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
@@ -926,8 +879,6 @@ body {
     border-top: 1px dashed #222;
     padding-top: 15px;
 }
-
-/*Ajuste no mobile*/
 
 /* ======================================================== */
 /* 🔥 VACINA MOBILE DEFINITIVA (XIAOMI, IPHONE E TELAS PEQUENAS) */
@@ -981,8 +932,6 @@ body {
         display: none !important;
     }
 
-    /* Desliga o brilho pra não dar lag no toque */
-
     /* 3. A INTERNET ESTÁ DOENTE (Manifesto) - Sem quebrar feio */
     .kinetic-container {
         gap: 5px !important;
@@ -995,12 +944,10 @@ body {
 
     .k-text {
         font-size: 2rem !important;
-        /* Tamanho perfeito pro Xiaomi */
         white-space: normal !important;
         text-align: center !important;
         letter-spacing: 0 !important;
         transform: none !important;
-        /* Desliga o movimento no scroll para não bugar a leitura */
     }
 
     /* 4. TERMINAL (Nós somos a cura...) - Texto fluído */
@@ -1016,12 +963,9 @@ body {
         display: none;
     }
 
-    /* Esconde a setinha pra ganhar espaço no mobile */
-
     /* 5. O ARQUITETO (Seu Card) - Trava o 3D e ajusta textos */
     .tilt-card {
         transform: none !important;
-        /* O JS não vai mais entortar o card no mobile */
         padding: 40px 20px !important;
     }
 
@@ -1079,8 +1023,6 @@ body {
     .cmd-link {
         word-break: break-all;
     }
-
-    /* Impede que links longos vazem da tela */
 
     /* 8. TRAVA O PULO DO FIM DA PÁGINA (Rebote do celular) */
     body,

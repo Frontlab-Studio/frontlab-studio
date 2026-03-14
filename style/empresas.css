@@ -55,7 +55,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* --- BOTÃO DE VOLTAR CRIATIVO --- */
 .nav-left {
     display: flex;
     align-items: center;
@@ -97,15 +96,12 @@ body {
 
 .btn-back:hover .back-arrow {
     transform: translateX(-3px);
-    /* Setinha empurra pra esquerda no hover */
 }
 
-/* Ajuste rápido para o celular não espremer tudo */
 @media (max-width: 768px) {
     .nav-left {
         width: 100%;
         justify-content: space-between;
-        /* Separa o botão HUB da Logo */
     }
 }
 
@@ -320,7 +316,6 @@ body {
     }
 }
 
-/* Controle Deslizante Invisível */
 .slider-control {
     position: absolute;
     top: 0;
@@ -351,7 +346,6 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-/* --- VACINA MOBILE INICIAL --- */
 @media (max-width: 768px) {
     .glass-nav {
         justify-content: center;
@@ -362,12 +356,9 @@ body {
         display: none;
     }
 
-    /* Esconde o botão no topo para celular ficar limpo */
     .comparison-slider {
         height: 500px;
     }
-
-    /* Trava os dois lados no centro exato da tela do celular com respiro */
     .content-bad,
     .content-good {
         width: 100% !important;
@@ -378,7 +369,6 @@ body {
         align-items: center !important;
         justify-content: center !important;
         padding: 20px !important;
-        /* Mantemos o seu padding aqui! */
     }
 }
 
@@ -517,7 +507,6 @@ body {
     font-family: var(--fonte-tech);
 }
 
-/* Ajuste Mobile para a Oferta */
 @media (max-width: 480px) {
     .pricing-card {
         padding: 25px 20px;
@@ -551,7 +540,6 @@ body {
     padding-left: 40px;
 }
 
-/* A Linha Vertical */
 .timeline::before {
     content: '';
     position: absolute;
@@ -662,7 +650,6 @@ body {
     padding-top: 15px;
 }
 
-/* CTA Final */
 .cta-final {
     text-align: center;
     max-width: 600px;
@@ -708,7 +695,6 @@ body {
     font-family: var(--fonte-tech);
 }
 
-/* --- TEXTOS DOS BURACOS DO RAIO-X --- */
 .hole-text {
     position: absolute;
     width: 50%;
@@ -752,7 +738,6 @@ body {
     color: #ccc;
 }
 
-/* Oculta os textos extras no celular para manter o design limpo */
 @media (max-width: 768px) {
     .hole-text {
         display: none;
