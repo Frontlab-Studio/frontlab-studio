@@ -767,14 +767,17 @@ body {
     color: #666;
     font-size: 0.8rem;
 }
+
 /* --- SEÇÃO 5: O TERMINAL FINAL (FOOTER) --- */
 .terminal-section {
-    min-height: 80vh; /* Não precisa ser 100vh, é o fechamento */
+    min-height: 80vh;
+    /* Não precisa ser 100vh, é o fechamento */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 100px 20px 40px;
-    background-color: #000; /* Preto absoluto para contraste final */
+    background-color: #000;
+    /* Preto absoluto para contraste final */
     position: relative;
     z-index: 10;
 }
@@ -811,9 +814,17 @@ body {
     border-radius: 50%;
 }
 
-.close { background: #ff5f56; }
-.minimize { background: #ffbd2e; }
-.expand { background: #27c93f; }
+.close {
+    background: #ff5f56;
+}
+
+.minimize {
+    background: #ffbd2e;
+}
+
+.expand {
+    background: #27c93f;
+}
 
 .term-title {
     width: 100%;
@@ -827,7 +838,8 @@ body {
 .terminal-body {
     padding: 30px;
     font-family: var(--fonte-tech);
-    color: var(--primary-b2c); /* Verde Hacker por padrão */
+    color: var(--primary-b2c);
+    /* Verde Hacker por padrão */
     font-size: clamp(0.85rem, 2vw, 1rem);
     line-height: 1.6;
     min-height: 300px;
@@ -864,7 +876,8 @@ body {
 }
 
 .prompt {
-    color: var(--primary-b2b); /* Azul para o root */
+    color: var(--primary-b2b);
+    /* Azul para o root */
     margin-right: 10px;
 }
 
@@ -885,7 +898,8 @@ body {
 }
 
 .cmd-link:hover .cmd-exec {
-    color: var(--primary-b2c); /* Fica verde no hover */
+    color: var(--primary-b2c);
+    /* Fica verde no hover */
     border-bottom: 1px solid var(--primary-b2c);
     text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
 }
@@ -912,3 +926,79 @@ body {
     border-top: 1px dashed #222;
     padding-top: 15px;
 }
+
+/*Ajuste no mobile*/
+
+@media (max-width: 1024px) {
+    .glass-nav {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1024px) {
+    .portal-side:hover {
+        flex: 1;
+        /* Remove a expansão da tela no celular */
+    }
+
+    .portal-side:hover .portal-content {
+        transform: none;
+        /* Desativa o zoom para liberar o clique de primeira */
+    }
+       .portal-content h1 {
+        font-size: 1.8rem;
+        padding: 0 10px;
+        word-wrap: break-word;
+    }
+    /* Desliga as animações de movimento e zoom no toque */
+    .portal-side, .portal-content, .btn-portal {
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    /* Dá mais espaço nas laterais e ajusta o tamanho do texto */
+    .portal-side {
+        padding: 30px 15px; 
+    }
+    
+    .portal-content p {
+        font-size: 0.95rem; 
+        max-width: 100%; 
+        line-height: 1.5;
+    }
+    
+    .portal-content h1 {
+        font-size: 1.6rem;
+    }
+    .terminal-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Espaço entre as bolinhas e o texto */
+        padding: 15px;
+        height: auto;
+    }
+    
+    .term-buttons {
+        position: static; /* Tira as bolinhas do canto esquerdo */
+        margin: 0;
+    }
+
+    .term-title {
+        position: static;
+        text-align: center;
+        font-size: 0.85rem; /* Diminui um pouco para caber certinho */
+    }
+    body, html {
+        overscroll-behavior-y: none;
+    }
+}
+
